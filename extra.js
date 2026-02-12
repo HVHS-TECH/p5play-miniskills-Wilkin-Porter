@@ -1,6 +1,6 @@
 /*******************************************************/
-// P5.play: t07_groups
-// Create aliens and add to a group on mouse click
+// P5.play: t20_load_images
+// load & display images
 // Written by ???
 /*******************************************************/
 	
@@ -23,41 +23,19 @@ function setup() {
 	//wallMid = new Sprite(width/2, height/2, 8, height/2, 'k');
 	//wallMid.color = 'black';
 
-	ball_1 = new Sprite(width/2, height/2, 50, 'd');
-	ball_1.color = 'cyan';
-	ball_1.vel.x = (randomInclNegative()*40);
-	ball_1.vel.y = (randomInclNegative()*40);
-	ball_1.bounciness = 1;
-	ball_1.friction = 0;
-	ball_1.drag = 0;
-
-	/*
-	ball_2 = new Sprite(width/2, height/2, 50, 'd');
-	ball_2.color = 'yellow';
-	ball_2.vel.x = (randomInclNegative()*40);
-	ball_2.vel.y = (randomInclNegative()*40);
-	ball_2.bounciness = 1;
-	ball_2.friction = 0;
-	ball_2.drag = 0;
-
-	ball_3 = new Sprite(width/2, height/2, 50, 'd');
-	ball_3.color = 'red';
-	ball_3.vel.x = (randomInclNegative()*40);
-	ball_3.vel.y = (randomInclNegative()*40);
-	ball_3.bounciness = 1;
-	ball_3.friction = 0;
-	ball_3.drag = 0;
-
-	ball_4 = new Sprite(width/2, height/2, 50, 'd');
-	ball_4.color = 'green';
-	ball_4.vel.x = (randomInclNegative()*40);
-	ball_4.vel.y = (randomInclNegative()*40);
-	ball_4.bounciness = 1;
-	ball_4.friction = 0;
-	ball_4.drag = 0;
-	*/
+	iceBall = new Sprite(width/2, height/2+100, 50, 'd');
+	iceBall.color = 'black';
+	iceBall.vel.x = (randomInclNegative()*40);
+	iceBall.vel.y = (randomInclNegative()*40);
+	iceBall.bounciness = 1;
+	iceBall.friction = 0;
+	iceBall.drag = 0;
+	iceBall.text = "ICE";
+    iceBall.textSize = 20;
+    iceBall.textColor = 'white';
 
 	alienGroup = new Group();
+	alienGroup.collides(ball_1, removeAlien);
 
 	for (i = 0; i < 100; i++) {
 		alien = new Sprite(width/2, height/2, 20, 20);
@@ -66,27 +44,16 @@ function setup() {
 		alien.bounciness = 1;
 		alien.friction = 0;
 		alien.drag = 0;
+        alien.color = random([]);
 		alienGroup.add(alien);
 	}
 }
-	
+
 /*******************************************************/
 // draw()
 /*******************************************************/
 function draw() {
 	background('lightgrey'); 
-
-	/*
-	for (i = 0; i < 10; i++) {
-		alien = new Sprite(width/2, height/2, 20, 20);
-		alien.vel.x = (randomInclNegative()*80);
-		alien.vel.y = (randomInclNegative()*80);
-		alien.bounciness = 1;
-		alien.friction = 0;
-		alien.drag = 0;
-	}
-	
-	*/
 }
 
 /*******************************************************/
@@ -98,6 +65,13 @@ function randomInclNegative() {
 	}
 
 	return Math.random();
+}
+
+/*******************************************************/
+// removeAlien()
+/*******************************************************/
+function removeAlien(_alienCollidedWith, _ball1) {
+	_alienCollidedWith.remove();
 }
 
 /*******************************************************/
