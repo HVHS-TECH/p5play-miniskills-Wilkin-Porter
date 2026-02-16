@@ -1,7 +1,7 @@
 /*******************************************************/
 // P5.play: t21_head2Mouse
 // Move sprite towards the mouse' position
-// Written by ???
+// Written by Wilkin Porter
 /*******************************************************/
 	
 /*******************************************************/
@@ -9,14 +9,41 @@
 /*******************************************************/
 function setup() {
 	console.log("setup: ");
-
+	cnv = new Canvas(windowWidth -4,  windowHeight -4);
+	world.gravity.y = 9.807;
+	sixsevenrect = new Sprite(6.7, 67, 67, 67);
+	sixsevenrect.color = 'cyan';
+	sixsevenrect.rotationSpeed = 2;
+	sixsevenrect.vel.x = 2;
 }
 	
+
+
 /*******************************************************/
 // draw()
 /*******************************************************/
+
+/*
 function draw() {
-	
+	background('lightgrey'); 
+
+	if (kb.pressing('left')) {
+    	// Set sprite's velocity to the left
+	}
+
+else if (kb.pressing ('right')) {
+
+   	etc...    
+
+};
+
+if (kb.released('left')) {
+
+    // Set sprite's velocity to zero
+
+}
+
+	etc... 
 }
 
 /*******************************************************/

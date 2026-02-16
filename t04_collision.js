@@ -1,7 +1,7 @@
 /*******************************************************/
 // P5.play: t04_collision
 // Sprite falls due to gravity & collides with the floor
-// Written by ???
+// Written by Wilkin Porter
 /*******************************************************/
 	
 /*******************************************************/
