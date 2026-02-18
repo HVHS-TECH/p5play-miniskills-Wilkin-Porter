@@ -23,27 +23,9 @@ function setup() {
 // draw()
 /*******************************************************/
 
-/*
+
 function draw() {
 	background('lightgrey'); 
-
-	if (kb.pressing('left')) {
-    	// Set sprite's velocity to the left
-	}
-
-else if (kb.pressing ('right')) {
-
-   	etc...    
-
-};
-
-if (kb.released('left')) {
-
-    // Set sprite's velocity to zero
-
-}
-
-	etc... 
 }
 
 /*******************************************************/
