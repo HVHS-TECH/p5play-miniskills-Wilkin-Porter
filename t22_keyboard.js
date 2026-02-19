@@ -28,14 +28,13 @@ function draw() {
 
 	if (kb.pressing('left')) {
 		player.direction = player.direction - 1;
-		player.rotation = player.direction;
 	}
 
 	if (kb.pressing('right')) {
 		player.direction = player.direction + 1;
-		player.rotation = player.direction;
-		
 	};
+	
+	player.rotation = player.direction;
 
 	if (kb.pressing('up')) {
 		player.speed = 5;
@@ -46,11 +45,11 @@ function draw() {
 	};
 
 	if (kb.released('up')) {    
-		player.speed = 0;
+		player.speed = 0.1;
 	};
 
 	if (kb.released('down')) {    
-		player.speed = 0;
+		player.speed = 0.1;
 	};
 }
 
