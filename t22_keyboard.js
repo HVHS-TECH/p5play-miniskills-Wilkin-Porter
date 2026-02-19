@@ -45,11 +45,11 @@ function draw() {
 	};
 
 	if (kb.released('up')) {    
-		player.speed = 0.1;
+		player.speed = 0;
 	};
 
 	if (kb.released('down')) {    
-		player.speed = 0.1;
+		player.speed = 0;
 	};
 }
 
